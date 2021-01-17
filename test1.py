@@ -20,7 +20,9 @@ def start():
 		else:
 			sleep(1)
 			system("clear")
-			print(f"Berhasil menemukan {len(data)} halaman.")
+			print(f"Berhasil menemukan {len(data)-1} halaman.")
+			sleep(3)
+			print(f"Perkiraan banyaknya video dari setiap halaman adalah 13 maka total keseluruhannya adalah {len(data) * 13} video.")
 			sleep(0.5)
 
 			# print all results.
