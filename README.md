@@ -51,7 +51,7 @@ print(animes)
 
 `getAnimesBySeries()`
 
-```json
+```
 [
 	{
 		"character": String,
@@ -70,7 +70,3 @@ print(animes)
 ```
 
 Dan lainnya bisa dicoba langsung ya!
-
-# Selanjutnya
-
-- Mendownload video nya menggunakan url.

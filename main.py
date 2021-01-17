@@ -242,6 +242,30 @@ def searchAnime(anime: str):
 		html = response.text
 		soup1 = BeautifulSoup(html, "html5lib")
 
+		if (soup1.find('div', class_="postbody").findNext('ul').findNext('li') is None):
+			return None
+
+		if (soup1.find('div', class_="postbody").findNext('ul').findNext('div', class_="pagination").findNext('div', class_="wp-pagenavi") is None):
+			videosElement = soup1.find('div', class_="postbody").findNext('ul').find_all('li')
+			videos = []
+			for videoElement in videosElement:
+				thumbnail = videoElement.find('div', class_="thumb").findNext('a').findNext('img').attrs['src']
+
+				url = videoElement.find('div', class_="dtl").findNext('h2').findNext('a').attrs['href']
+				
+				title = videoElement.find('div', class_="dtl").findNext('h2').text.strip()
+				release = videoElement.find('div', class_="dtl").findNext('span').findNext('span').text.strip().replace('Rilis hari Minggu, ', '').split('Lihat daftar isi')[0].strip()
+				videos.append({
+					"title": title,
+					"url": url,
+					"thumbnail": thumbnail,
+					"release": release
+				})
+			return [{
+				"page": 1,
+				"videos": videos
+			}]
+
 		posts = soup1.find('div', class_="postbody").findNext('ul').findNext('div', class_="pagination").findNext('div', class_="wp-pagenavi").find_all('a')
 
 		index = 0
