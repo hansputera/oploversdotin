@@ -292,7 +292,7 @@ def searchAnime(anime: str):
 				url = videoElement.find('div', class_="dtl").findNext('h2').findNext('a').attrs['href']
 				
 				title = videoElement.find('div', class_="dtl").findNext('h2').text.strip()
-				release = videoElement.find('div', class_="dtl").findNext('span').findNext('span').text.strip().replace('Rilis hari Minggu, ', '').split('Lihat daftar isi')[0].strip()
+				release = videoElement.find('div', class_="dtl").findNext('span').findNext('span').text.strip().split('Lihat daftar isi')[0].split(',', 1)[1].strip()
 
 				videos.append({
 					"title": title,
