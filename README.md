@@ -17,7 +17,7 @@ print(animes)
 ```
 
 3. Mencari semua daftar anime dari on-going anime.
-```py
+```
 animes = getAnimesOngoing()
 print(animes)
 ```
@@ -28,7 +28,7 @@ print(animes)
 `getAnimeByGenre(action)`
 
 
-```json
+```
 [
 	{
 		"genreType": GenreType,
@@ -68,3 +68,9 @@ print(animes)
 	}
 ]
 ```
+
+Dan lainnya bisa dicoba langsung ya!
+
+# Selanjutnya
+
+- Mendownload video nya menggunakan url.

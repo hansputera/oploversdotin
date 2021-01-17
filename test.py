@@ -1,6 +1,17 @@
-import re
-test = "https://www.oploverz.in/page/70/?s=naruto"
+from main import getAnimesByGenre, getAnimesOngoing, getAnimesBySeries, searchAnime
 
-data = str(test.translate({ ord(c) : "" for c in "!@#$%^&*()[]{};:,./<>?\|`~-=_+" }))
+#	Get animes by genre.
+data = getAnimesByGenre("action")
+print(data)
 
-print(int(re.sub(r"[\s||a-z]", "", data)))
+# Get Animes by on-going lists.
+data1 = getAnimesOngoing()
+print(data1)
+
+# Get Animes by Series
+data2 = getAnimesBySeries()
+print(data2)
+
+# Search anime
+narutoResults = searchAnime("naruto")
+print(narutoResults)
